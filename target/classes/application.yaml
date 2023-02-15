@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: Ec-App
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ec-app?characterEncoding=utf-8&useSSL=false&UseUnicode=true&serverTimezone=UTC
+
+mybatis:
+  type-aliases-package: com.shuai.entity
+  mapper-locations: com/shuai/mapper/xml/*.xml

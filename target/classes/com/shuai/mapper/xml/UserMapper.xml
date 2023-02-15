@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuai.mapper.UserMapper">
+    <select id="QueryBalance" resultType="Double" parameterType="int">
+        select money from `ec-app`.user where id = #{id};
+    </select>
+
+    <update id="Consumer100">
+        update `ec-app`.user set  money = #{money} where id = #{id};
+    </update>
+
+    <update id="refund20">
+        update `ec-app`.user set  money = #{money} where id = #{id};
+    </update>
+
+    <select id="Details" resultType="UserDetails">
+        select * from `ec-app`.userdetails where uid = #{uid};
+    </select>
+
+    <insert id="addDetails">
+        insert into `ec-app`.userdetails(uid,Details,createdate) values (#{param1},#{param2},now())
+    </insert>
+</mapper>
